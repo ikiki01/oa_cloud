@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>接收端 · 4号选手</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 醒目横幅 -->
+    <div id="liveBanner" class="banner-hidden">⚡ 新战略数据包已到达云端！</div>
+
+    <div class="app-container">
+        <header class="navbar">
+            <div class="logo">
+                <span class="brand">☀️ 旭日光伏</span>
+                <span class="sys-tag">数据接收中心</span>
+            </div>
+            <div class="user-info">
+                <span>👤 <span id="userName">4号选手</span></span>
+                <span class="status-dot online"></span>
+                <button id="logoutBtn" class="btn-outline">退出</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="welcome-card">
+                <h1>📊 战略整合就绪</h1>
+                <p>实时监听云端数据流，新文件将自动同步并触发提醒。</p>
+                <div class="live-indicator">
+                    <span class="pulse-dot"></span> 监听中 ...
+                </div>
+            </div>
+
+            <div class="file-list-section">
+                <div class="section-header">
+                    <h2>📥 待整合文件</h2>
+                    <span class="badge" id="receiverFileCount">0 个文件</span>
+                </div>
+                <table class="file-table">
+                    <thead><tr><th>文件名</th><th>类型</th><th>大小</th><th>上传时间</th><th>上传人</th></tr></thead>
+                    <tbody id="receiverTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- 全屏弹窗 -->
+    <div id="alertOverlay" class="alert-overlay hidden">
+        <div class="alert-modal">
+            <div class="alert-icon">🔔</div>
+            <h2>🚨 紧急战略数据抵达！</h2>
+            <p id="alertFileName" style="font-size:1.5rem; font-weight:bold; color:#D4AF37;">文件名称</p>
+            <p style="color:#8899aa;">请立即进行财务建模与合规整合分析</p>
+            <button class="btn-primary" onclick="closeAlert()">我已知晓，即刻处理</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/receiver.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旭日光伏 · 战略决策登录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <span class="brand">☀️ 旭日光伏</span>
+                <span class="sys-tag">战略决策系统 V3.0</span>
+            </div>
+            <h2>安全登录</h2>
+            <p class="login-sub">请输入您的账号以访问数据中枢</p>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>用户名</label>
+                    <input type="text" id="username" placeholder="user3 或 user4" value="user3">
+                </div>
+                <div class="input-group">
+                    <label>密码</label>
+                    <input type="password" id="password" placeholder="密码: 123456" value="123456">
+                </div>
+                <div id="loginError" class="error-msg"></div>
+                <button type="submit" class="btn-primary full-width">登录系统</button>
+            </form>
+            <div class="login-hint">
+                <span>测试账号: user3 / 123456 (上传者) | user4 / 123456 (接收者)</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

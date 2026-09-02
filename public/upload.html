@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>上传端 · 3号选手</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="navbar">
+            <div class="logo">
+                <span class="brand">☀️ 旭日光伏</span>
+                <span class="sys-tag">战略数据中枢</span>
+            </div>
+            <div class="user-info">
+                <span>👤 <span id="userName">3号选手</span></span>
+                <button id="logoutBtn" class="btn-outline">退出</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-zone" id="dropZone">
+                    <div class="upload-icon">📤</div>
+                    <h3>上传核心数据文件</h3>
+                    <p>支持 .xlsx, .pdf, .log, .json</p>
+                    <input type="file" id="fileInput" multiple style="display:none;">
+                    <button class="btn-primary" onclick="document.getElementById('fileInput').click()">选择文件上传</button>
+                </div>
+                <div class="upload-status" id="uploadStatus">就绪</div>
+            </div>
+
+            <div class="file-list-section">
+                <div class="section-header">
+                    <h2>📂 云端文件清单</h2>
+                    <span class="badge" id="fileCount">0 个文件</span>
+                </div>
+                <table class="file-table">
+                    <thead><tr><th>文件名</th><th>类型</th><th>大小</th><th>上传时间</th><th>上传人</th></tr></thead>
+                    <tbody id="fileTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>
